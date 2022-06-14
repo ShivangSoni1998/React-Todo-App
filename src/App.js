@@ -17,14 +17,12 @@ const App = () => {
     }
   }, []);
 
-  const addTodos = async todo => {
+  const addTodos = todo => {
     setTodos([...todos, todo]);
   };
 
   useEffect(() => {
-    if(todos.length){
-       localStorage.setItem("todos", JSON.stringify(todos));
-    }
+    localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
   const markComplete = id => {
